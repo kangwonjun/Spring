@@ -61,10 +61,8 @@
                               , salary
                               </if>
                               )
-        values
-        	(
-        	   #{employeeId}
-        	   employees_seq.NEXTVAL
+        values(
+       		   #{employeeId}
                ,#{lastName}
                ,#{email}
                <choose>

@@ -31,7 +31,7 @@ public class ParamController {
 		return result;
 	}
 	
-	
+	// QueryString => @RequestParam : 기본타입, 단일값
 	@RequestMapping(path="reqparm",
 			method= {RequestMethod.GET, RequestMethod.POST})
 	@ResponseBody

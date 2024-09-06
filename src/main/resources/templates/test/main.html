@@ -7,7 +7,8 @@
 <body>
 	<h1>타임리프 테스트</h1>
 	<th:block th:each="num : ${ #numbers.sequence(1,5) }">
-		<p th:text="${num}" />
+		<p th:text="${sts.count}" />
+		<p th:text="${sts.even}" />
 	</th:block>
 	<p th:text="${emp.lastName + '님'}"/>
 	<p th:text="${emp.lastName}"/>
