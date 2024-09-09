@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import com.yedam.app.emp.service.EmpVO;
 
 public interface EmpMapper {
+<<<<<<< HEAD
 	// 전체조회
 	public List<EmpVO> selectEmpAllList();
 	// 단건조회
@@ -18,4 +19,16 @@ public interface EmpMapper {
 								@Param("emp")EmpVO empVO);
 	// 삭제
 	public int deleteEmpInfo(int empId);
+=======
+	//전체조회
+	public List<EmpVO> selectEmpAllList();
+	//단건조회
+	public EmpVO selectEmpInfo(EmpVO empVO);
+	//등록
+	public int insertEmpInfo(EmpVO empVO);
+	//수정
+	public int updateEmpInfo(@Param("eid") int empId,@Param("emp") EmpVO empVO);
+	//삭제
+	public int delectEmpInfo(int empId);
+>>>>>>> branch 'master' of https://github.com/kangwonjun/Spring.git
 }

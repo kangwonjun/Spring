@@ -18,10 +18,21 @@ public class WebAdvice {
 		return new ResponseEntity<>
 		("Error Message", HttpStatus.BAD_REQUEST);
 	}
+<<<<<<< HEAD
 	// 공통변수선언
 	@ModelAttribute("contextPath")
 	public String contextPath
 			(HttpServletRequest request) {		
 		return request.getContextPath();
 	}
+=======
+	
+	// 공통변수선언
+	@ModelAttribute("contextPath")
+	public String contextPath
+			(HttpServletRequest request) {
+		return request.getContextPath();
+	}
+	
+>>>>>>> branch 'master' of https://github.com/kangwonjun/Spring.git
 }

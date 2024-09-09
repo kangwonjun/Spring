@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html xmlns:th="https://www.thymeleaf.org/"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
@@ -6,6 +7,15 @@
 <title>Home</title>
 <th:block th:replace="~{common/configs/default_config :: defaultConfig}"></th:block>
 <th:block th:replace="~{common/configs/default_config :: jQueryConfig}"></th:block>
+=======
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+<th:block th:replace="~{common/configs/default_configs :: defaultConfig}"></th:block>
+<th:block th:replace="~{common/configs/default_configs :: jQueryConfig}"></th:block>
+>>>>>>> branch 'master' of https://github.com/kangwonjun/Spring.git
 </head>
 <body>
 	<header th:insert="~{common/fragments/default_header :: defaultHeader}"></header>
