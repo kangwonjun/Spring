@@ -1,4 +1,32 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+	<div>
+		<h3>전체 부서 조회</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>부서번호</th>
+					<th>부서명</th>
+				</tr>
+			</thead>
+			<tbody>
+				<th:block th:each="info : ${depts}">
+					<tr>
+						<td>[[ ${info.departmentId} ]]</td>
+						<td>[[ ${info.departmentName} ]]</td>
+					</tr>
+				</th:block>
+			</tbody>
+		</table>
+	</div>
+<body>
+
+=======
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
@@ -27,5 +55,6 @@
 			</tbody>
 		</table>
 	</div>
+>>>>>>> branch 'master' of https://github.com/kangwonjun/Spring.git
 </body>
 </html>

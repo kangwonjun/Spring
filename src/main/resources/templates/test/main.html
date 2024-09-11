@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>타임리프 테스트</h1>
+	<th:block th:each="num, sts : ${ #numbers.sequence(1,5) }">
+		<p th:text="${sts.count }"/>
+		<p th:text="${sts.even }"/>
+	</th:block>
+	<p th:text="${emp.lastName + '님'}"/>
+	<a th:href="@{/empList}">전체조회</a>
+=======
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
@@ -13,6 +28,7 @@
 	<p th:text="${emp.lastName + '님'}"/>
 	<p th:text="${emp.lastName}"/>
 	<a th:href="@{/emopList}">전체조회 링크 @{}</a>
+>>>>>>> branch 'master' of https://github.com/kangwonjun/Spring.git
 	<a href="/empList">전체조회</a>
 </body>
 </html>
