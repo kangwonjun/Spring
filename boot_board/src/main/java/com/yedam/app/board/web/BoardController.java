@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yedam.app.board.service.BoardService;
@@ -54,21 +55,14 @@ public class BoardController {
 	// 등록 - 처리 : URI - boardInsert / PARAMETER - BoardVO(QueryString)
 	//             RETURN - 단건조회 다시 호출
 	@PostMapping("boardInsert")
-	public String deptInsertProcess(BoardVO boardVO) {
-		int boardId = boardService.insertBoard(boardVO);
-		String url = null;
-		if(boardId > -1) {
-			url = "redirect:boardInfo?bno=" + boardId;
-		}
-		else {
-			url = "board/boardList";
-		}
-		
-		return url;
+	public String deptInsertProcess(BoardVO boardVO) { //<form/> 활용한 submit사용
+		int eid = boardService.insertBoard(boardVO);	
+		return "redirect:boardInfo?bno=" + eid;
 	}
 	
 	// 수정 - 페이지 : URI - boardUpdate / PARAMETER - BoardVO(QueryString)
 	//               RETURN - board/boardUpdate
+	// => 단건조회
 	@GetMapping("boardUpdate")
 	public String deptUpdate(BoardVO boardVO, Model model) {
 		BoardVO findVO = boardService.boardInfo(boardVO);
@@ -78,6 +72,7 @@ public class BoardController {
 	
 	// 수정 - 처리 : URI - boardUpdate / PARAMETER - BoardVO(JSON)
 	//             RETURN - 수정결과 데이터(Map)
+	// => 등록(내부에서 수행하는 쿼리문 - UPDATE문)
 	@PostMapping("boardUpdate")
 	@ResponseBody
 	public Map<String, Object> deptUpdateAjaxJson(@RequestBody BoardVO boardVO) {
@@ -86,9 +81,10 @@ public class BoardController {
 	
 	// 삭제 - 처리 : URI - boardDelete / PARAMETER - Integer
 	//             RETURN - 전체조회 다시 호출
-	@GetMapping("boardDelete")
-	public String deptDelete(Integer bno) {
-		boardService.deleteBoard(bno);
+	@GetMapping("boardDelete") // QueryString : @RequestParam
+	public String boardDelete(@RequestParam Integer no) {
+		boardService.deleteBoard(no);
+		
 		return "redirect:boardList";
 	}
 	
